@@ -48,13 +48,11 @@ public class Meme {
     }
 
     private static void hourlyCaller() {
-        new Thread(() -> {
-            run();
-            try {
-                Thread.sleep(7200000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
+        run();
+        try {
+            Thread.sleep(7200000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
