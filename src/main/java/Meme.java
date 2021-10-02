@@ -6,7 +6,6 @@ import java.net.URL;
 
 public class Meme {
     public static void run() {
-        hourlyCaller();
         StringBuilder xmlResult = new StringBuilder();
         try {
             URL url = new URL("https://meme-api.herokuapp.com/gimme/1");
@@ -45,14 +44,5 @@ public class Meme {
 
         System.out.println(url);
         EventListener.CHANNEL.sendMessage(url).queue();
-    }
-
-    private static void hourlyCaller() {
-        run();
-        try {
-            Thread.sleep(7200000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
