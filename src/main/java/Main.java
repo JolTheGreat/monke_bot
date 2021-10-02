@@ -19,11 +19,6 @@ public class Main {
                 .build();
 
         jda.awaitReady();
-        List<TextChannel> channelList = jda.getTextChannels();
-
-        for (TextChannel textChannel : channelList) {
-            textChannel.sendMessage("Bot updated").queue();
-        }
 
         jda.addEventListener(new EventListener());
     }
