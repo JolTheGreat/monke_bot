@@ -11,7 +11,6 @@ public class Meme {
             URL url = new URL("https://meme-api.herokuapp.com/gimme/1");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             int responseCode = connection.getResponseCode();
-            System.out.println("The response code was " + responseCode);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
             int charsRead;
@@ -31,8 +30,6 @@ public class Meme {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(xmlResult);
-        System.out.println(xmlResult.toString().indexOf("url"));
         String url = "";
 
         for (String s : xmlResult.toString().split(",")) {
@@ -42,7 +39,6 @@ public class Meme {
             }
         }
 
-        System.out.println(url);
         EventListener.CHANNEL.sendMessage(url).queue();
     }
 }
